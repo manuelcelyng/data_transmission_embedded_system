@@ -15,7 +15,7 @@ int main()
 {
     stdio_init_all();
     setup_slave();
-    // setup_uart_lora();
+    setup_uart_lora();
 
     while (true)
     {
