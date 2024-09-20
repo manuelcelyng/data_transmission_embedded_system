@@ -14,6 +14,7 @@
 
 extern char sendCmd[];   // Define un  comando AT de inicialización
 extern char message[16]; // Commands monitor serial
+extern char lora_data_rate[];
 
 // Funcion donde se inicializa UART para el modulo LoRaWAN
 void setup_uart_lora();

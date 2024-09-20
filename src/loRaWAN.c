@@ -8,6 +8,9 @@
 #include <stdio.h>
 #include <debug.h>
 // Inicialización de variables
+
+char lora_data_rate[] = "AT+DR=5";
+
 char sendCmd[] = "AT+SENDB=0,2,98,"; // conf, portf, hex_payload en bytes EJEMPLO <- NO SE USA esta variable
 const uint8_t conf = 0;
 const uint8_t fport = 2;
@@ -75,4 +78,7 @@ void setup_uart_lora()
 
     // habilitamos el UART para enviar interrupciones - RX only
     uart_set_irq_enables(UART_ID_LORA, false, false);
+
+    // Se realiza la conf del modulo para poder transmitir :D
+    uart_puts(UART_ID_LORA, lora_data_rate);
 }
